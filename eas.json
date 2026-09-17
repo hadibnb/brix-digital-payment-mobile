@@ -1,0 +1,49 @@
+{
+  "cli": {
+    "version": ">= 12.0.0",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "channel": "development",
+      "env": {
+        "EXPO_PUBLIC_BRIX_API_BASE_URL": "https://dp.brixgroup.ir"
+      }
+    },
+    "preview": {
+      "distribution": "internal",
+      "channel": "preview",
+      "android": {
+        "buildType": "apk"
+      },
+      "env": {
+        "EXPO_PUBLIC_BRIX_API_BASE_URL": "https://dp.brixgroup.ir"
+      }
+    },
+    "production": {
+      "channel": "production",
+      "autoIncrement": true,
+      "android": {
+        "buildType": "app-bundle"
+      },
+      "env": {
+        "EXPO_PUBLIC_BRIX_API_BASE_URL": "https://dp.brixgroup.ir"
+      }
+    }
+  },
+  "submit": {
+    "production": {
+      "android": {
+        "serviceAccountKeyPath": "./secrets/google-service-account.json",
+        "track": "internal"
+      },
+      "ios": {
+        "appleId": "REPLACE_WITH_APPLE_ID",
+        "ascAppId": "REPLACE_WITH_ASC_APP_ID",
+        "appleTeamId": "REPLACE_WITH_TEAM_ID"
+      }
+    }
+  }
+}
